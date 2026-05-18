@@ -30,21 +30,30 @@ npm run build
 npm run preview
 ```
 
-## Deploy (GitHub Pages)
+## Deploy on Vercel (recommended)
 
-This repo includes a GitHub Actions workflow that deploys on every push to `main`.
+1. Push this project to GitHub (`gajulavishnusai/portfolio`).
+2. Go to [vercel.com](https://vercel.com) and sign in with GitHub.
+3. Click **Add New → Project** and import your **portfolio** repo.
+4. Keep the defaults (Vite is auto-detected):
+   - **Build Command:** `npm run build`
+   - **Output Directory:** `dist`
+5. Click **Deploy**.
 
-1. Create a new repository named **`portfolio`** on GitHub.
-2. Enable Pages: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-3. Push this project:
+Every `git push` to `main` will redeploy automatically.
+
+### Deploy from terminal (optional)
 
 ```bash
-git init
-git add .
-git commit -m "Initial portfolio"
-git branch -M main
-git remote add origin https://github.com/gajulavishnusai/portfolio.git
-git push -u origin main
+npm i -g vercel
+cd C:\Users\HP\portfolio
+vercel
 ```
+
+Follow the prompts, then run `vercel --prod` for production.
+
+## Deploy (GitHub Pages)
+
+GitHub Actions deploys to Pages on push to `main`. Enable **Settings → Pages → Source: GitHub Actions**.
 
 Live site: **https://gajulavishnusai.github.io/portfolio/**

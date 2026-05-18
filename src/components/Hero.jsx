@@ -1,9 +1,18 @@
+import { useState } from 'react'
 import { profile } from '../data/portfolio'
 import './Hero.css'
 
 export default function Hero() {
+  const [photoSrc, setPhotoSrc] = useState(profile.photo)
+
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const handlePhotoError = () => {
+    if (photoSrc !== profile.photoFallback) {
+      setPhotoSrc(profile.photoFallback)
+    }
   }
 
   return (
@@ -42,6 +51,14 @@ export default function Hero() {
         </div>
 
         <div className="hero-visual reveal" style={{ transitionDelay: '0.15s' }}>
+          <div className="hero-photo-frame">
+            <img
+              src={photoSrc}
+              alt={`${profile.name} profile`}
+              className="hero-photo"
+              onError={handlePhotoError}
+            />
+          </div>
           <div className="hero-card">
             <div className="hero-card-inner">
               <div className="code-window">

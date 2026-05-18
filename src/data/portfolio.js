@@ -1,6 +1,9 @@
 export const profile = {
   name: 'Gajula Vishnu Sai',
   initials: 'GVS',
+  // Add your photo as public/profile.jpg (or .png and update the path below)
+  photo: '/profile.jpg',
+  photoFallback: '/profile-placeholder.svg',
   role: 'Aspiring Frontend Developer',
   tagline:
     'B.E. Computer Science student building responsive web apps with HTML, CSS, JavaScript, and React.',
@@ -16,7 +19,7 @@ export const profile = {
   highlights: [
     { value: '2', label: 'Academic web projects' },
     { value: '4', label: 'Professional certifications' },
-    { value: 'B.E.', label: 'CSE — R.M.K College, Chennai' },
+    { value: 'B.E.', label: 'CSE — R.M.K College of Engineering and Technology, Chennai' },
   ],
   social: {
     github: 'https://github.com/gajulavishnusai',

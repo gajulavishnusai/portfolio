@@ -75,8 +75,44 @@
   background: var(--text-muted);
 }
 
+.hero-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.hero-photo-frame {
+  position: relative;
+  width: min(280px, 70vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--accent), #a3e635);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.hero-photo-frame::before {
+  content: '';
+  position: absolute;
+  inset: -12%;
+  background: radial-gradient(circle, var(--accent-dim), transparent 70%);
+  filter: blur(24px);
+  z-index: -1;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--bg-card);
+  background: var(--bg-card);
+}
+
 .hero-card {
   position: relative;
+  width: 100%;
 }
 
 .hero-card::before {
@@ -157,5 +193,10 @@
     order: -1;
     max-width: 420px;
     margin-inline: auto;
+    width: 100%;
+  }
+
+  .hero-photo-frame {
+    width: min(220px, 55vw);
   }
 }
